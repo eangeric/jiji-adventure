@@ -1,11 +1,21 @@
 import React from "react";
 import { TextBox } from "../components/TextBox";
+import { Choices } from "../components/Choices";
 
 export default function PartOne() {
   return (
     <div className="h-dvh flex flex-col justify-end items-center">
       <div className="flex-grow flex items-center">
         <img src="/jiji-adventure/jiji.png" className="h-72 animate-sway"></img>
+      </div>
+      <div className="w-full">
+        <Choices
+          left="Nah"
+          leftClick={() => {
+            window.location.reload();
+          }}
+          right="Help"
+        ></Choices>
       </div>
       <div className="flex items-end text-2xl/8">
         <TextBox>
