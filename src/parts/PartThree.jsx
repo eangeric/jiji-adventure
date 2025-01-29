@@ -1,10 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { TextBox } from "../components/TextBox";
 import { useStory } from "../contexts/useStory";
 import { Choice } from "../components/Choice";
 import { Choices } from "../components/Choices";
 
 export default function PartThree() {
+  const [shovelLoaded, setShovelLoaded] = useState(false);
+  const shovelGif = "/jiji-adventure/shovel.gif";
+
+  // Preload the shovel.gif before it's needed
+  useEffect(() => {
+    const img = new Image();
+    img.src = shovelGif;
+    img.onload = () => setShovelLoaded(true); // Mark as loaded
+  }, []);
+
   const [textCount, setTextCount] = useState(0);
   const text = [
     "The footprints led you to a mound of dirt!",
@@ -12,6 +22,7 @@ export default function PartThree() {
     "Jiji hands you a shovel!",
     "Dig the dirt?",
   ];
+
   // @ts-ignore
   const { setStoryState } = useStory();
   return (
@@ -20,7 +31,7 @@ export default function PartThree() {
         {textCount < 2 && (
           <img src="/jiji-adventure/dirt.png" className="h-72"></img>
         )}
-        {1 < textCount && (
+        {1 < textCount && shovelLoaded && (
           <img
             src="/jiji-adventure/shovel.gif"
             className="h-64 animate-bounce"
