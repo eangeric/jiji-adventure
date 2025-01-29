@@ -8,7 +8,7 @@ export const Choices = ({
   rightClick = () => {},
 }) => {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center gap-2">
       <Choice onClick={leftClick}>{left}</Choice>
       <Choice onClick={rightClick}>{right}</Choice>
     </div>
