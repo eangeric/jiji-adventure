@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-game: "Press Start 2P", serif;
+}
+
+@layer base {
+  * {
+    font-family: var(--font-game);
+  }
+
+  body {
+    @apply bg-sky-400;
+  }
+}
