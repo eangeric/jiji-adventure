@@ -17,9 +17,10 @@ export default function PartThree() {
   return (
     <div className="h-dvh flex flex-col justify-end items-center">
       <div className="flex-grow flex items-center">
-        {textCount < 2 ? (
+        {textCount < 2 && (
           <img src="/jiji-adventure/dirt.png" className="h-72"></img>
-        ) : (
+        )}
+        {1 < textCount && (
           <img
             src="/jiji-adventure/shovel.gif"
             className="h-64 animate-bounce"

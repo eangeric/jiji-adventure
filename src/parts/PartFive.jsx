@@ -31,7 +31,7 @@ export default function PartFive() {
   };
 
   return (
-    <div>
+    <>
       {textCount < 2 && <Confetti width={width} height={height} />}
       <div className="h-dvh flex flex-col justify-end items-center">
         <div className="flex-grow flex items-center">
@@ -72,6 +72,6 @@ export default function PartFive() {
           <TextBox>{text[textCount]}</TextBox>
         </div>
       </div>
-    </div>
+    </>
   );
 }
